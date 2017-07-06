@@ -16,27 +16,27 @@
 </head>
 
 <body>
-  <div class="container container-bg">
+<div class="container container-bg">
   <h1 class="text-center">Pomodoro Clock</h1>
   <div class="row">
     <div class="col-md-2">
       <div class="preference" id="breaker">
         <h3>Break Time</h3>
-        <a><i class="time-input fa fa-caret-up" aria-hidden="true"></i></a>
+        <a id="inc-break"><i class="time-input fa fa-caret-up" aria-hidden="true"></i></a>
         <span class="time-input" id="break-time">5</span>
-        <a><i class="time-input fa fa-caret-down" aria-hidden="true"></i></a>
+        <a id="dec-break"><i class="time-input fa fa-caret-down" aria-hidden="true"></i></a>
       </div>
     </div>
     <div class="col-md-2">
       <div class="preference" id="timer">
         <h3>Timer Length</h3>
-        <a><i class="time-input fa fa-caret-up" aria-hidden="true"></i></a>
+        <a id="inc-length"><i class="time-input fa fa-caret-up" aria-hidden="true"></i></a>
         <span class="time-input" id="timer-length">25</span>
-        <a><i class="time-input fa fa-caret-down" aria-hidden="true"></i></a>
+        <a id="dec-length"><i class="time-input fa fa-caret-down" aria-hidden="true"></i></a>
       </div>
     </div>
     <div class="col-md-6">
-      <button class="btn btn-default center-block">Begin Timer</button>
+      <button class="btn btn-default center-block" id="toggle-timer">Toggle Timer</button>
       <div class="clock-design center-block" id="clock">
         <div class="clock-text" id="clock-timer">25:00</div>
       </div>
