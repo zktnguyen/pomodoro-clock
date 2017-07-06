@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Pomodoro Clock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="container container-bg">
+  <h1 class="text-center">Pomodoro Clock</h1>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="preference" id="breaker">
+        <h3>Break Time</h3>
+        <a><i class="time-input fa fa-caret-up" aria-hidden="true"></i></a>
+        <span class="time-input" id="break-time">5</span>
+        <a><i class="time-input fa fa-caret-down" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="preference" id="timer">
+        <h3>Timer Length</h3>
+        <a><i class="time-input fa fa-caret-up" aria-hidden="true"></i></a>
+        <span class="time-input" id="timer-length">25</span>
+        <a><i class="time-input fa fa-caret-down" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="clock-design center-block" id="clock">
+        <div class="clock-text" id="clock-timer">25:00</div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

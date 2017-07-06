@@ -1,0 +1,45 @@
+html, body {
+  height: 100%;
+  background-color: #edb265;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.container-bg {
+  height: 100%;
+  background-color: white;
+}
+
+.preference {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 3.5em;
+  
+}
+
+.preference > a {
+  cursor: pointer;
+  color: black;
+}
+
+.time-input {
+  display: block;
+  padding: 2px;
+  margin: auto;
+}
+
+.clock-design {
+  display: block;
+  width: 300px;
+  height: 250px;
+  margin: 30px auto;
+  padding: 10px 2px 2px 2px;
+  border: 5px solid #edb265;
+  border-radius: 50%;
+  font-size: 3.5em;
+  text-align: center;
+}
+
+.clock-text {
+  margin: auto;
+  padding: 65px;
+}
