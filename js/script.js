@@ -26,6 +26,7 @@
       }
       timerInSeconds = timeLength * 60;
       length.html(timeLength);
+      clockTimer.html(timeLength + ":00");
     });
 
     incLength.on("click", function(){
@@ -37,6 +38,7 @@
       }
       timerInSeconds = timeLength * 60;
       length.html(timeLength);
+      clockTimer.html(timeLength + ":00");
     });
 
     decBreak.on("click", function(){
@@ -59,13 +61,14 @@
       breakTime.html(breakLength);
     });
 
-    function changeBackground() {
-      $("body").css('background-color', '#a2f9b3');
-      $(".clock-design").css("border", "10px dashed #a2f9b3");
+    function changeBackground(bgColor, borderStyle, borderColor) {
+      $("body").css('background-color', bgColor);
+      $(".clock-design").css("border", borderStyle);
+      $(".clock-design").css("border-color", borderColor);
     }
 
     function playBreak() {
-      changeBackground();
+      changeBackground('#a2f9b3', '10px dashed', '#a2f9b3');
       timerInSeconds = breakLength * 60;
       var breakClock = setInterval(timer, 1000);
       function timer() {
@@ -73,13 +76,41 @@
         if (timerInSeconds <= 0){
           buzzer.play();
           clearInterval(breakClock);
-
+          changeBackground('#edb265', '5px solid', '#edb265');
         }
-        clockTimer.html(timerInSeconds);
+        clockTimer.html(secondsToFormat(timerInSeconds));
       }
     }
 
+    function secondsToFormat(seconds) {
+      var hours = Math.floor(timerInSeconds / 3600);
+      var minutes = Math.floor(timerInSeconds / 60);
+      var sec = Math.floor(timerInSeconds % 3600 % 60);
+      var str = '';
+      if (hours) {
+        str += hours + ":";
+      }
+
+      if (minutes < 10) {
+        str += '0' + minutes + ':';
+      }
+
+      else if (minutes) {
+        str += minutes + ':';
+      }
+      
+      if (sec < 10) {
+        str += '0' + sec;
+      }
+      else {
+        str += sec;
+      }
+      
+      return str;
+    }
+
     toggle.on("click",function(){
+      timerInSeconds = timeLength * 60;
       var clock = setInterval(timer, 1000);
       function timer() {
         timerInSeconds -= 1;
@@ -88,7 +119,7 @@
           clearInterval(clock);
           playBreak();
         }
-        clockTimer.html(timerInSeconds);
+        clockTimer.html(secondsToFormat(timerInSeconds));
       }
     });
   });
